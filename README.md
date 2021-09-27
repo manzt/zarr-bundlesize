@@ -11,39 +11,50 @@ npm run build
 
 ```sh
 > zarr-bundlesize@1.0.0 build
-> run-p zarr zarr-js zarrita zarrita-core
-
-
-> zarr-bundlesize@1.0.0 zarrita
-> esbuild --bundle --outfile=dist/zarrita.js --format=esm src/zarrita.js
+> run-p zarr zarr-js zarrita zarrita-core zarrita-core-dynamic
 
 
 > zarr-bundlesize@1.0.0 zarr-js
-> esbuild --bundle --outfile=dist/zarr-js.js --format=esm src/zarr-js.js
+> esbuild --bundle --minify --outfile=dist/zarr-js.js --format=esm src/zarr-js.js
 
 
 > zarr-bundlesize@1.0.0 zarr
-> esbuild --bundle --outfile=dist/zarr.js --format=esm src/zarr.js
+> esbuild --bundle --minify --outfile=dist/zarr.js --format=esm src/zarr.js
+
+
+> zarr-bundlesize@1.0.0 zarrita
+> esbuild --bundle --minify --outfile=dist/zarrita.js --format=esm src/zarrita.js
 
 
 > zarr-bundlesize@1.0.0 zarrita-core
-> esbuild --bundle --outfile=dist/zarrita-core.js --format=esm src/zarrita-core.js
+> esbuild --bundle --minify --outfile=dist/zarrita-core.js --format=esm src/zarrita-core.js
 
 
-  dist/zarrita.js  139.6kb
+> zarr-bundlesize@1.0.0 zarrita-core-dynamic
+> esbuild --bundle --minify --splitting --outdir=dist/zarr-core-dyanmic --format=esm src/zarrita-core-dynamic-codecs.js
 
-⚡ Done in 19ms
 
-  dist/zarr.js  189.0kb
+  dist/zarr-js.js  132.7kb
+
+⚡ Done in 25ms
+
+  dist/zarrita-core.js  46.3kb # just core zarr features
 
 ⚡ Done in 21ms
 
-  dist/zarrita-core.js  109.6kb # supports "core" zarr features, no fancy slicing
+  dist/zarr.js  85.1kb
 
-⚡ Done in 21ms
+⚡ Done in 22ms
 
-  dist/zarr-js.js  322.4kb
+  dist/zarrita.js  61.6kb
 
 ⚡ Done in 26ms
+
+  dist/zarr-core-dyanmic/chunk-BVQTLAQB.js               43.6kb
+  dist/zarr-core-yanmic/zarrita-core-dynamic-codecs.js   2.1kb # zarr implementation is ~2kb, rest is compression lib
+  dist/zarr-core-dyanmic/zlib-LZSF2JAL.js                 389b
+  dist/zarr-core-dyanmic/gzip-I6SXISEB.js                 383b
+
+⚡ Done in 19ms
 ```
 

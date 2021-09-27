@@ -3,11 +3,12 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "build": "run-p zarr zarr-js zarrita zarrita-core",
-    "zarr": "esbuild --bundle --outfile=dist/zarr.js --format=esm src/zarr.js",
-    "zarr-js": "esbuild --bundle --outfile=dist/zarr-js.js --format=esm src/zarr-js.js",
-    "zarrita": "esbuild --bundle --outfile=dist/zarrita.js --format=esm src/zarrita.js",
-    "zarrita-core": "esbuild --bundle --outfile=dist/zarrita-core.js --format=esm src/zarrita-core.js"
+    "build": "run-p zarr zarr-js zarrita zarrita-core zarrita-core-dynamic",
+    "zarr": "esbuild --bundle --minify --outfile=dist/zarr.js --format=esm src/zarr.js",
+    "zarr-js": "esbuild --bundle --minify --outfile=dist/zarr-js.js --format=esm src/zarr-js.js",
+    "zarrita": "esbuild --bundle --minify --outfile=dist/zarrita.js --format=esm src/zarrita.js",
+    "zarrita-core": "esbuild --bundle --minify --outfile=dist/zarrita-core.js --format=esm src/zarrita-core.js",
+    "zarrita-core-dynamic": "esbuild --bundle --minify --splitting --outdir=dist/zarr-core-dyanmic --format=esm src/zarrita-core-dynamic-codecs.js"
   },
   "keywords": [],
   "author": "",

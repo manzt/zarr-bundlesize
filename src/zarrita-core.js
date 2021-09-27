@@ -1,6 +1,6 @@
-import { ZarrArray, registry } from 'zarrita/core';
-import { GZip, Zlib } from 'numcodecs';
+import { ZarrArray } from 'zarrita/core';
 
+import { GZip, Zlib } from 'numcodecs';
 registry.add('gzip', () => GZip);
 registry.add('zlib', () => Zlib);
 
