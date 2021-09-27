@@ -1,0 +1,24 @@
+{
+  "name": "zarr-bundlesize",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "build": "run-p zarr zarr-js zarrita",
+    "zarr": "esbuild --bundle --outfile=dist/zarr.js --format=esm src/zarr.js",
+    "zarr-js": "esbuild --bundle --outfile=dist/zarr-js.js --format=esm src/zarr-js.js",
+    "zarrita": "esbuild --bundle --outfile=dist/zarrita.js --format=esm src/zarrita.js"
+  },
+  "keywords": [],
+  "author": "",
+  "dependencies": {
+    "zarr": "^0.5.1",
+    "zarr-js": "^2.1.1",
+    "zarrita": "^0.1.8"
+  },
+  "devDependencies": {
+    "buffer": "^6.0.3",
+    "esbuild": "^0.13.2",
+    "npm-run-all": "^4.1.5",
+    "numcodecs": "^0.2.1"
+  }
+}
