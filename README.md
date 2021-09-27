@@ -11,7 +11,7 @@ npm run build
 
 ```sh
 > zarr-bundlesize@1.0.0 build
-> run-p zarr zarr-js zarrita
+> run-p zarr zarr-js zarrita zarrita-core
 
 
 > zarr-bundlesize@1.0.0 zarrita
@@ -26,24 +26,24 @@ npm run build
 > esbuild --bundle --outfile=dist/zarr.js --format=esm src/zarr.js
 
 
+> zarr-bundlesize@1.0.0 zarrita-core
+> esbuild --bundle --outfile=dist/zarrita-core.js --format=esm src/zarrita-core.js
+
+
   dist/zarrita.js  139.6kb
 
 ⚡ Done in 19ms
 
   dist/zarr.js  189.0kb
 
-⚡ Done in 19ms
+⚡ Done in 21ms
+
+  dist/zarrita-core.js  109.6kb # supports "core" zarr features, no fancy slicing
+
+⚡ Done in 21ms
 
   dist/zarr-js.js  322.4kb
 
-⚡ Done in 23ms
+⚡ Done in 26ms
 ```
-
-```
-ls -la dist
-.rw-r--r-- 330k hms-manzt 27 Sep 16:51 zarr-js.js
-.rw-r--r-- 194k hms-manzt 27 Sep 16:51 zarr.js
-.rw-r--r-- 143k hms-manzt 27 Sep 16:51 zarrita.js
-```
-
 
