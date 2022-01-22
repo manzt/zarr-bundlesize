@@ -15,7 +15,7 @@
   "dependencies": {
     "zarr": "^0.5.1",
     "zarr-js": "^2.1.1",
-    "zarrita": "^0.1.8"
+    "zarrita": "^0.2.1"
   },
   "devDependencies": {
     "buffer": "^6.0.3",
